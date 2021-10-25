@@ -17,7 +17,7 @@ const BalanceDisplay = () => {
 	return (
 		<Container className="text-center fw-bold text-white" id="balanceDisplayCont">
 			<Card className="bg-dark border">
-				<Card.Body>Cash Balance : ${balance}</Card.Body>
+				<Card.Body>{Ingame_weekNumber().currentdate.getFullYear()} Week {Ingame_weekNumber().ingame_weeknumber} Cash Balance : ${balance}</Card.Body>
 			</Card>
 		</Container>
 	)
