@@ -10,7 +10,7 @@ const ChoiceDisplay = () => {
 	useEffect(() => {
 		setChoice({
 			name: localStorage.getItem('clicked_coin').toUpperCase(),
-			price: localStorage.getItem('clicked_coin_price').toUpperCase()
+			price: localStorage.getItem('clicked_coin_price')
 		})
 	})
 
