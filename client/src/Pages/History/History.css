@@ -21,17 +21,12 @@ body {
 }
 
 #histTitle {
-  color: white;
+  color: gold;
   font-weight: bolder;
   display: flex;
   align-items: center;
   justify-content: center;
   font-size: xxx-large;
-}
-
-#histIcon {
-  margin-right: 1rem;
-  color: green;
 }
 
 #histTableCont {
