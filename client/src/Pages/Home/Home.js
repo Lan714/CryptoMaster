@@ -5,6 +5,7 @@ import Navbar from '../../components/NavBar'
 import Footer2 from '../../components/Footer2/Footer2'
 import CoinSummaryPage from '../CoinSummary/CoinSummaryPage'
 import LimitBox from '../../components/LimitBox'
+import BalanceDisplay from '../../components/BalanceDisplay/BalanceDisplay'
 import './Home.css'
 
 const Home = () => {
@@ -24,6 +25,7 @@ const Home = () => {
 						</Col>
 					</Row>
 				</Container>
+				<BalanceDisplay />
 				<CoinSummaryPage />
 				<LimitBox />
 				<Footer2 />

@@ -45,7 +45,6 @@ const History = () => {
 
 				getTransaction(data.data[0].weekNumber)
 			})
-
 	}
 
 	useEffect(() => {
