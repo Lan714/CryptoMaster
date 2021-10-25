@@ -1,6 +1,16 @@
 const router = require('express').Router()
 const { Crypto, User } = require('../models')
 const passport = require('passport')
+const { json } = require('express')
+
+router.get('/crypto/:history_id', async function (req, res) {
+  await Crypto.find({ history: req.params.history_id })
+    .then(data => {
+      // console.log(data)
+      res.json(data)
+    })
+    .catch(err => res.json(err))
+})
 
 router.post('/crypto', passport.authenticate('jwt'), async function (req, res) {
   const crypto = await Crypto.create({ ...req.body, user: req.user._id })
