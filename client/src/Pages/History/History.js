@@ -3,8 +3,6 @@ import HistoryAPI from '../../utils/HistoryAPI'
 import Navbar from '../../components/NavBar'
 import { Dropdown, Container, Row, Col } from 'react-bootstrap'
 import DropdownWeeknumForm from '../../components/DropdownWeekNumForm'
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
-import { faWallet } from '@fortawesome/free-solid-svg-icons'
 import * as ReactBootStrap from 'react-bootstrap'
 import Footer2 from '../../components/Footer2'
 import './History.css'
@@ -106,7 +104,6 @@ const History = () => {
 				<Container id="histHeader">
 					<Row>
 						<Col id="histTitle">
-							<FontAwesomeIcon icon={faWallet} id="histIcon" />
 							History
 						</Col>
 					</Row>

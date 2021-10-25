@@ -22,7 +22,7 @@ const Navbar = () => {
 				<li className="navTog">
 					<section className="navLink">
 						<span className="navSpan">CryptoMaster</span>
-						<FontAwesomeIcon icon={faAngleDoubleRight} style={{ color: "#3993CD" }} id="togIcon" />
+						<FontAwesomeIcon icon={faAngleDoubleRight} style={{ color: "gold" }} id="togIcon" />
 					</section>
 				</li>
 
