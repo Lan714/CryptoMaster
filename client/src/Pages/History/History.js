@@ -4,7 +4,7 @@ import Navbar from '../../components/NavBar'
 import { Dropdown, Container, Row, Col } from 'react-bootstrap'
 import DropdownWeeknumForm from '../../components/DropdownWeekNumForm'
 import * as ReactBootStrap from 'react-bootstrap'
-import Footer2 from '../../components/Footer2'
+import Footer from '../../components/Footer'
 import './History.css'
 
 const History = () => {
@@ -179,7 +179,7 @@ const History = () => {
 						)
 					}
 				</Container>
-				<Footer2 />
+				<Footer />
 			</div>
 		</div>
 	)

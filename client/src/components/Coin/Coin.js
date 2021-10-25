@@ -3,7 +3,6 @@ import { Link } from "react-router-dom";
 
 const Coin = ({ coin, deleteCoin }) => {
   const click_coin = event => {
-    event.preventDefault()
     localStorage.setItem('clicked_coin', coin.id)
     localStorage.setItem('clicked_coin_price', coin.current_price)
     alert(`You choose ${coin.id}!`)

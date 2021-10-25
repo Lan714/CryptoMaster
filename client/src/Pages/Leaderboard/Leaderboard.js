@@ -7,7 +7,7 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faTrophy } from '@fortawesome/free-solid-svg-icons'
 import * as ReactBootStrap from 'react-bootstrap'
 import './Leaderboard.css'
-import Footer2 from '../../components/Footer2'
+import Footer from '../../components/Footer'
 
 const Leaderboard = () => {
 	if (!localStorage.getItem('token')) {
@@ -136,7 +136,7 @@ const Leaderboard = () => {
 						)
 					}
 				</Container>
-				<Footer2 />
+				<Footer />
 			</div>
 		</div>
 	)
