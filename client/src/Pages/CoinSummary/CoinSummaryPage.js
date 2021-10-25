@@ -10,11 +10,10 @@ const CoinSummaryPage = () => {
     null,
     React.createElement(
       'div',
-      { className: 'coinsummary border p-2 rounded mt bg-light' },
+      { className: 'coinsummary border p-2 rounded mt bg-dark' },
       React.createElement(CoinList, null)
     )
   );
 };
 
 export default CoinSummaryPage;
-

@@ -7,7 +7,7 @@ CryptoMaster is a play investment game with virtual $100 which is given when use
 ![logo](https://cdn.discordapp.com/attachments/898283948860407819/900816588314382386/Screen_Shot_2021-10-21_at_2.43.18_PM.png)
 
 ## Deployed Link
-[CryptoMaster](https://github.com/Lan714/Crypto-Game-Project)
+[CryptoMaster](https://vast-headland-48199.herokuapp.com/signin)
 ## Tech Used
 * Axios
 * Dotenv

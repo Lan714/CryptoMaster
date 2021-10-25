@@ -2,9 +2,10 @@ import React from 'react';
 import { Link } from "react-router-dom";
 
 const Coin = ({ coin, deleteCoin }) => {
-  const click_coin = () => {
-    console.log(coin.id)
-    console.log(coin.current_price)
+  const click_coin = event => {
+    localStorage.setItem('clicked_coin', coin.id)
+    localStorage.setItem('clicked_coin_price', coin.current_price)
+    alert(`You choose ${coin.id}!`)
   }
 
   return React.createElement(
@@ -13,7 +14,7 @@ const Coin = ({ coin, deleteCoin }) => {
     React.createElement(
       "li",
       {
-        className: "coinlist-item list-group-item list-group-item-action d-flex justify-content-between align-items-center text-dark",
+        className: "coinlist-item border list-group-item list-group-item-action d-flex justify-content-between align-items-center text-white bg-dark",
         onClick: () => click_coin()
       },
       React.createElement("img", { className: "coinlist-image", src: coin.image, alt: "" }),
