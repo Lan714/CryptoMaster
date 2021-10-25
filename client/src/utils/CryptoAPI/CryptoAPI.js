@@ -2,10 +2,13 @@ import axios from 'axios'
 
 const CryptoAPI = {
 	create: crypto => axios.post('/api/crypto', crypto, {
-		headers: {
-			Authorization: `Bearer ${localStorage.getItem('token')}`
-		}
 	}),
+
+	getCoinlist: history_id => axios.get('api/crypto/:history_id', {
+		
+	})
+	,
+
 	update: (id, updates) => axios.put(`/api/crypto/${id}`, updates, {
 		headers: {
 			Authorization: `Bearer ${localStorage.getItem('token')}`
