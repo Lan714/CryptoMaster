@@ -1,12 +1,13 @@
 #right {
-  color: rgb(174, 179, 179);
   text-align: center;
   align-content: center;
   bottom: 0;
   position: absolute;
+  left: 15rem;
   margin-top: 1rem;
   height: auto;
   width: auto;
+  color: rgb(174, 179, 179);
 }
 
 .link {

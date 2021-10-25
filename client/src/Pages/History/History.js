@@ -1,5 +1,6 @@
 import { useState, useEffect } from 'react'
 import HistoryAPI from '../../utils/HistoryAPI'
+import CryptoAPI from '../../utils/CryptoAPI'
 import Navbar from '../../components/NavBar'
 import { Dropdown, Container, Row, Col } from 'react-bootstrap'
 import DropdownWeeknumForm from '../../components/DropdownWeekNumForm'
@@ -20,6 +21,7 @@ const History = () => {
 	}])
 
 	const [transcationState, setTransactionState] = useState([])
+	const [coinOverview, setCoinOverview] = useState([])
 	const [weekNumState, setWeekNumState] = useState(0)
 	const [loading, setLoading] = useState(false)
 
@@ -31,6 +33,17 @@ const History = () => {
 		setLoading(true)
 	}
 
+	
+	const getCoinOverview = (history_id) => {
+		console.log(`getCoinOverview function with ${history_id}`)
+
+		CryptoAPI.getCoinlist(history_id)
+			.then((data) => {
+				console.log(data)
+			})
+			.catch(err => console.log(err))
+	}
+
 	const getHistory = (weekNum) => {
 		HistoryAPI.getHistory(weekNum)
 			.then((data) => {
@@ -38,9 +51,9 @@ const History = () => {
 				setOverviewState([{
 					cash_balance: data.data[0].cash_balance,
 					coin_balance: data.data[0].crypto_balances,
-					profit: data.data[0].profit
+					profit: data.data[0].profit,
 				}])
-
+				getCoinOverview(data.data[0]._id)
 				getTransaction(data.data[0].weekNumber)
 			})
 	}
