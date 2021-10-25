@@ -2,7 +2,7 @@ import React from 'react';
 import 'bootstrap/dist/css/bootstrap.css';
 import Carousel from 'react-bootstrap/Carousel';
 import Jasmine from './Image/jasmine_avatar.png';
-import Jayeon from './Image/jay_avatar.png';
+import Jayeon from './Image/jay_avatar1.png';
 import Lan from './Image/lan_avatar.png';
 import Remi from './Image/remi_avatar.png';
 import Shannon from './Image/shannon_avatar.png';
