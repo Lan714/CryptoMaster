@@ -2,6 +2,7 @@ import { useState, useEffect } from 'react'
 import HistoryAPI from '../../utils/HistoryAPI/HistoryAPI'
 import { Container, Card, CardGroup, Form, Button } from 'react-bootstrap'
 import './LimitBox.css'
+import ChoiceDisplay from '../ChoiceDisplay'
 
 const LimitBox = () => {
 	const crypto_name = localStorage.getItem('clicked_coin')
@@ -34,6 +35,7 @@ const LimitBox = () => {
 			HistoryAPI.pushTransaction(body)
 				.then(data => {
 					alert('Selling Transaction success!')
+					window.location.reload(false);
 					setPriceState({
 						...priceState, real_time_price: real_time_price,
 						sell_amount: 0.0,
@@ -61,6 +63,7 @@ const LimitBox = () => {
 			HistoryAPI.pushTransaction(body)
 				.then(data => {
 					alert(`Buying Transaction success!`)
+					window.location.reload(false);
 					setPriceState({
 						...priceState, real_time_price: real_time_price,
 						sell_amount: 0.0,
@@ -74,6 +77,7 @@ const LimitBox = () => {
 
 	return (
 		<Container id="limitBoxCont" className="mt-5">
+			<ChoiceDisplay />
 			<CardGroup>
 				<Card style={{ width: '18rem' }} className="bg-dark border rounded text-white">
 					<Card.Body>
