@@ -6,7 +6,7 @@ import DropdownWeeknumForm from '../../components/DropdownWeekNumForm'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faWallet } from '@fortawesome/free-solid-svg-icons'
 import * as ReactBootStrap from 'react-bootstrap'
-import Footer2 from '../../components/Footer2'
+import Footer from '../../components/Footer'
 import './History.css'
 
 const History = () => {
@@ -183,7 +183,7 @@ const History = () => {
 						)
 					}
 				</Container>
-				<Footer2 />
+				<Footer />
 			</div>
 		</div>
 	)
