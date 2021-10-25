@@ -5,7 +5,7 @@ const Coin = ({ coin, deleteCoin }) => {
   const click_coin = event => {
     localStorage.setItem('clicked_coin', coin.id)
     localStorage.setItem('clicked_coin_price', coin.current_price)
-    alert(`You choose ${coin.id}!`)
+    window.location.reload(false);
   }
 
   return React.createElement(
