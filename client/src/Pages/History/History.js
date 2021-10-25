@@ -33,7 +33,7 @@ const History = () => {
 		setLoading(true)
 	}
 
-	
+
 	const getCoinOverview = (history_id) => {
 		console.log(`getCoinOverview function with ${history_id}`)
 

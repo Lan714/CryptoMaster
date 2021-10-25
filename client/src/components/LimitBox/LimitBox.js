@@ -34,8 +34,9 @@ const LimitBox = () => {
 
 			HistoryAPI.pushTransaction(body)
 				.then(data => {
-					alert('Selling Transaction success!')
-					window.location.reload(false);
+					console.log(data)
+					//alert('Selling Transaction success!')
+					//window.location.reload(false);
 					setPriceState({
 						...priceState, real_time_price: real_time_price,
 						sell_amount: 0.0,
