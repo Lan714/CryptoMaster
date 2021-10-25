@@ -1,7 +1,7 @@
 {
   "name": "crypto-game-project",
   "version": "1.0.0",
-  "description": "",
+  "description": "## Desctription CryptoMaster is a play investment game with virtual $100 which is given when users register for the website. Play the game for a week and able to see their weekly rankings by their profit. The market in the game will be same as real-time market(Stock or Cryptocurrency).",
   "main": "server.js",
   "scripts": {
     "start": "if-env NODE_ENV=production && npm run start:prod || npm run start:dev",
@@ -32,6 +32,7 @@
     "if-env": "^1.0.4",
     "jsonwebtoken": "^8.5.1",
     "mongoose": "^6.0.12",
+    "nodemon": "^2.0.14",
     "passport": "0.4.0",
     "passport-jwt": "^4.0.0",
     "passport-local": "^1.0.0",
@@ -39,6 +40,7 @@
     "rc-table": "^7.19.0",
     "react-bootstrap": "^2.0.0",
     "react-chartjs-2": "^3.2.0",
-    "react-js-stickynav": "^1.0.2"
+    "react-js-stickynav": "^1.0.2",
+    "save-dev": "^0.0.1-security"
   }
 }
