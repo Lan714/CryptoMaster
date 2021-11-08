@@ -4,6 +4,7 @@ import { Container, Card, CardGroup, Form, Button } from 'react-bootstrap'
 import './LimitBox.css'
 import ChoiceDisplay from '../ChoiceDisplay'
 import Ingame_weekNumber from '../Ingame_weekNumber/Ingame_weekNumber'
+import { ButtonGroup } from 'react-bootstrap'
 
 
 const LimitBox = () => {
@@ -16,6 +17,7 @@ const LimitBox = () => {
 		sell_amount: 0.0,
 		buy_amout: 0.0
 	})
+	const [balance, setBalance] = useState()
 
 
 	const handleInputChange = ({ target: { name, value } }) => setPriceState({ ...priceState, [name]: value })
@@ -84,6 +86,63 @@ const LimitBox = () => {
 
 	}
 
+	const max_buy = event => {
+		HistoryAPI.getHistory(Ingame_weekNumber().ingame_weeknumber)
+			.then((data) => {
+				if (data.data[0].cash_balance > 0) {
+					setBalance(data.data[0].cash_balance)
+					setPriceState({ buy_amout: balance / real_time_price })
+				}
+				else {
+					setPriceState({ buy_amout: 0 })
+				}
+			})
+	}
+	const half_buy = event => {
+		HistoryAPI.getHistory(Ingame_weekNumber().ingame_weeknumber)
+			.then((data) => {
+				if (data.data[0].cash_balance > 0) {
+					setBalance(data.data[0].cash_balance)
+					setPriceState({ buy_amout: (balance / real_time_price) / 2 })
+				}
+				else {
+					setPriceState({ buy_amout: 0 })
+				}
+			})
+	}
+
+	const max_sell = event => {
+		HistoryAPI.getHistory(Ingame_weekNumber().ingame_weeknumber)
+			.then(data => {
+				HistoryAPI.getCryptoAmount(data.data[0]._id)
+					.then(data => {
+						if (data.data.find(coin => coin.crypto_name === crypto_name)) {
+							let amount = data.data.find(coin => coin.crypto_name === crypto_name).amount
+							setPriceState({ sell_amount: amount })
+						}
+						else {
+							setPriceState({ sell_amount: 0 })
+						}
+					})
+			})
+	}
+
+	const half_sell = event => {
+		HistoryAPI.getHistory(Ingame_weekNumber().ingame_weeknumber)
+			.then(data => {
+				HistoryAPI.getCryptoAmount(data.data[0]._id)
+					.then(data => {
+						if (data.data.find(coin => coin.crypto_name === crypto_name)) {
+							let amount = data.data.find(coin => coin.crypto_name === crypto_name).amount
+							setPriceState({ sell_amount: amount / 2 })
+						}
+						else {
+							setPriceState({ sell_amount: 0 })
+						}
+					})
+			})
+	}
+
 	return (
 		<Container id="limitBoxCont" className="mt-5">
 			<ChoiceDisplay />
@@ -111,10 +170,20 @@ const LimitBox = () => {
 								name="total"
 								value={priceState.buy_amout * real_time_price} />
 						</Form.Group>
-						<Button
-							variant="warning"
-							onClick={handleBuy}>
-							Buy</Button>
+						<ButtonGroup>
+							<Button
+								variant="warning"
+								onClick={max_buy}>
+								Max</Button>
+							<Button
+								variant="warning"
+								onClick={half_buy}>
+								50%</Button>
+							<Button
+								variant="warning"
+								onClick={handleBuy}>
+								Buy</Button>
+						</ButtonGroup>
 					</Card.Body>
 				</Card>
 				<Card style={{ width: '18rem' }} className="bg-dark border rounded text-white">
@@ -140,10 +209,20 @@ const LimitBox = () => {
 								name="total"
 								value={priceState.sell_amount * real_time_price} />
 						</Form.Group>
-						<Button
-							variant="warning"
-							onClick={handleSell}>
-							Sell</Button>
+						<ButtonGroup>
+							<Button
+								variant="warning"
+								onClick={max_sell}>
+								Max</Button>
+							<Button
+								variant="warning"
+								onClick={half_sell}>
+								50%</Button>
+							<Button
+								variant="warning"
+								onClick={handleSell}>
+								Sell</Button>
+						</ButtonGroup>
 					</Card.Body>
 				</Card>
 			</CardGroup>
