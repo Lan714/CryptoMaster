@@ -9,17 +9,15 @@ function AboutUs() {
 	return (
 		<div className="aboutUsPg">
 			<Navbar />
-			<div className=" aboutUsPgContent text-center">
-				<Container className="aboutUsCont" id="aboutUsHeader">
+			<div className="pgContent text-center">
+				<Container className="aboutUsCont mb-4" id="aboutUsHeader">
 					<Col id="aboutUsTitle">
 						<p class="text-warning" FontAwesomeIcon icon={"fas fa-user"} id="aboutUsIcon" />
 						About Us
-						<br></br>
-						<br></br>
 					</Col>
 				</Container>
 				<Container className="aboutUsCont" id="howToPlay">
-					<Row top="xs" xs={12} md={1}>
+					<Row top="xs" xs={12}>
 						<Col id="howToPlay">
 							<h3>How to Play CryptoMaster</h3>
 						</Col>
@@ -28,7 +26,6 @@ function AboutUs() {
 				<Container className="aboutUsCont" id="Instructions">
 					<Row sm={8}>
 						<Col id="Instructions">
-							<br></br>
 							<br></br>
 							<p><h5>Register for a CryptoMaster account. Sign-up is free and it's easy!</h5></p>
 							<p><h5>CryptoMaster is a fun way to learn how to trade cryptocurrencies, without risking your own money. No investment required.</h5></p> 
@@ -48,27 +45,27 @@ function AboutUs() {
 						</Col>
 					</Row>
 				</Container>
-				   <Container id="ContactInfo">
+				   <Container className="text-white" id="ContactInfo">
           <Row top="xs" xs={12}>
             <Col id="Contact">
               <h3>Get In Touch </h3>
             </Col>
           </Row>
         </Container>
-        <Container id="ContactInfo">
+        <Container className="text-white" id="ContactInfo">
           <Row sm={8}>
             <Col id="ContactInfo">
               <p><h5>Comments, Question or Concerns, feel free to contact us at:  </h5>
                 <h5><li className="list-unstyled">
                   {/* <p className="mb-0"> */}
-                <FontAwesomeIcon icon={faPhone} className="icon2" />(541) 754-3010
+                <FontAwesomeIcon icon={faPhone} className="icon2 me-1" />(541) 754-3010
                 {/* </p> */}
                   </li>
                   </h5>
                   </p>
                   <h5><li className="list-unstyled">
                     {/* <p className="mb-0"> */}
-                <FontAwesomeIcon icon={faEnvelope} className="icon2" />CryptoMaster@gmail.com
+                <FontAwesomeIcon icon={faEnvelope} className="icon2 me-1" />CryptoMaster@gmail.com
                 {/* </p> */}
                 </li>
                 </h5>
