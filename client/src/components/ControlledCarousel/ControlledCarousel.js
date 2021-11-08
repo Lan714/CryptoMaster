@@ -11,7 +11,7 @@ import './ControlledCarousel.css';
 
 function ControlledCarousel() {
   return (
-    <div id="Title" style={{ display: 'block', width: 500, padding: 30, color:'white'}}>
+    <div id="Title">
       <h1 style={{color:'white'}}>Who We Are</h1>
       <h3 style={{color:'white'}}>CryptoMaster is the brainchild of six UCI Full Stack Bootcamp Students</h3>
       <br></br>

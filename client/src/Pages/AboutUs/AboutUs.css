@@ -11,13 +11,13 @@ body {
   height: 100%;
 }
 
-.aboutUsPgContent {
+/* .aboutUsPgContent {
   position: absolute;
   height: 100%;
   width: calc(100%);
   left: 5rem;
   color: white;
-}
+} */
 
 #aboutUsHeader {
   color: white;

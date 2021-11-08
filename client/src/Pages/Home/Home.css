@@ -39,6 +39,7 @@ body {
 @media screen and (max-width: 600px) {
   .pgContent {
     width: 100vw;
+    overflow-y: scroll;
   }
 }
 
