@@ -15,7 +15,6 @@ router.get('/history/:num', passport.authenticate('jwt'), async function (req, r
 		.then(history => res.json(history))
 })
 
-
 router.post('/history', passport.authenticate('jwt'), async function (req, res) {
 
 	const currentdate = new Date()
@@ -40,9 +39,6 @@ router.post('/history', passport.authenticate('jwt'), async function (req, res) 
 
 // Transaction Function........!!!!!!!!
 router.put('/history/transaction/', passport.authenticate('jwt'), async function (req, res) {
-
-	console.log(`transaction request for ${req.body.historys}`)
-
 	const currentdate = new Date()
 	var oneJan = new Date(currentdate.getFullYear(), 0, 1)
 	var numberOfDays = Math.floor((currentdate - oneJan) / (24 * 60 * 60 * 1000))

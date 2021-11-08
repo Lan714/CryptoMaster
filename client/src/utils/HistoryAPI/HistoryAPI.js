@@ -16,6 +16,12 @@ const HistoryAPI = {
 		}
 	}),
 
+	getCryptoAmount: history_id => axios.get(`api/crypto/${history_id}`, {
+		headers: {
+			Authorization: `Bearer ${localStorage.getItem('token')}`
+		}
+	}),
+
 	getHistory: (num) => axios.get(`api/history/${num}`, {
 		headers: {
 			Authorization: `Bearer ${localStorage.getItem('token')}`

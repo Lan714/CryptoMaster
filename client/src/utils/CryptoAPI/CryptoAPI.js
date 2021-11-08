@@ -5,7 +5,9 @@ const CryptoAPI = {
 	}),
 
 	getCoinlist: history_id => axios.get(`api/crypto/${history_id}`, {
-
+		headers: {
+			Authorization: `Bearer ${localStorage.getItem('token')}`
+		}
 	})
 	,
 
