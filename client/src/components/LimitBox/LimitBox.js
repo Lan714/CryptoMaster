@@ -3,6 +3,8 @@ import HistoryAPI from '../../utils/HistoryAPI/HistoryAPI'
 import { Container, Card, CardGroup, Form, Button } from 'react-bootstrap'
 import './LimitBox.css'
 import ChoiceDisplay from '../ChoiceDisplay'
+import Ingame_weekNumber from '../Ingame_weekNumber/Ingame_weekNumber'
+
 
 const LimitBox = () => {
 	const crypto_name = localStorage.getItem('clicked_coin')
@@ -35,8 +37,8 @@ const LimitBox = () => {
 			HistoryAPI.pushTransaction(body)
 				.then(data => {
 					console.log(data)
-					//alert('Selling Transaction success!')
-					//window.location.reload(false);
+					alert('Selling Transaction success!')
+					window.location.reload(false);
 					setPriceState({
 						...priceState, real_time_price: real_time_price,
 						sell_amount: 0.0,
@@ -49,6 +51,13 @@ const LimitBox = () => {
 
 	const handleBuy = event => {
 		event.preventDefault()
+
+		HistoryAPI.getHistory(Ingame_weekNumber().ingame_weeknumber)
+			.then((data) => {
+				if (data.data[0].cash_balance < priceState.buy_amout * real_time_price) {
+					alert(`You don't have enough balance to buy the amount!`)
+				}
+			})
 
 		if (priceState.buy_amout === 0.0 || priceState.buy_amout === 0) {
 			alert('Put Amount!')
@@ -63,7 +72,6 @@ const LimitBox = () => {
 
 			HistoryAPI.pushTransaction(body)
 				.then(data => {
-					alert(`Buying Transaction success!`)
 					window.location.reload(false);
 					setPriceState({
 						...priceState, real_time_price: real_time_price,
