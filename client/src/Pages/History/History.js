@@ -39,7 +39,7 @@ const History = () => {
 
 		CryptoAPI.getCoinlist(history_id)
 			.then((data) => {
-				console.log(data)
+				console.log(data.data)
 			})
 			.catch(err => console.log(err))
 	}

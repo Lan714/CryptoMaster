@@ -4,8 +4,8 @@ const CryptoAPI = {
 	create: crypto => axios.post('/api/crypto', crypto, {
 	}),
 
-	getCoinlist: history_id => axios.get('api/crypto/:history_id', {
-		
+	getCoinlist: history_id => axios.get(`api/crypto/${history_id}`, {
+
 	})
 	,
 

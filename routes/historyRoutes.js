@@ -10,7 +10,7 @@ router.get('/history/max', passport.authenticate('jwt'), (req, res) => {
 	res.json(result)
 })
 
-router.get('/history/:num', passport.authenticate('jwt'), async function (req, res)  {
+router.get('/history/:num', passport.authenticate('jwt'), async function (req, res) {
 	await History.find({ weekNumber: req.params.num, user: req.user._id })
 		.then(history => res.json(history))
 })
@@ -41,8 +41,8 @@ router.post('/history', passport.authenticate('jwt'), async function (req, res) 
 // Transaction Function........!!!!!!!!
 router.put('/history/transaction/', passport.authenticate('jwt'), async function (req, res) {
 
-	console.log(`transaction request for ${req.body}`)
-	
+	console.log(`transaction request for ${req.body.historys}`)
+
 	const currentdate = new Date()
 	var oneJan = new Date(currentdate.getFullYear(), 0, 1)
 	var numberOfDays = Math.floor((currentdate - oneJan) / (24 * 60 * 60 * 1000))
@@ -67,9 +67,9 @@ router.put('/history/transaction/', passport.authenticate('jwt'), async function
 				// if there is no crypto data in db or the amount in the crypto is less then req.body.amount
 				if (data.length === 0 || data[0].amount === 0 || data[0].amount < amount) {
 					sell_flag = false
-
 					res.json({
-						messagae: 'Not enough amount to sell'
+						messagae: 'Not enough amount to sell',
+						data: data
 					})
 				}
 			})
