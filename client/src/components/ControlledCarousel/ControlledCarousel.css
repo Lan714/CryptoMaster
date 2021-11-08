@@ -1,13 +1,14 @@
 html, body {
   font-family: 'Roboto Slab', serif;
+  text-align: justify;
 }
 
 .ui-center {
-  text-align: center;
+  text-align: justify;
 }
 
 .h1 {
-  font-size: 24px;
+  font-size: 16px;
   font-family: 'Roboto Slab', serif;
   text-align: center;
   color:gray;
@@ -16,8 +17,8 @@ html, body {
 }
 
 #WhoWeAre {
-  color:grey;
   margin-bottom: 10%;
+  color:grey;
   text-shadow: -1px -1px 0 #000
 }
 #Carousel {

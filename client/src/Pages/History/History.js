@@ -195,6 +195,7 @@ const History = () => {
 				<Footer />
 			</div>
 		</div>
+
 	)
 }
 

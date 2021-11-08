@@ -75,7 +75,6 @@ function AboutUs() {
             </Col>
           </Row>
         </Container>
-
 				<Footer2 />
 			</div>
 		</div>)
