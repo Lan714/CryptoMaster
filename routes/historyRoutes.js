@@ -62,7 +62,7 @@ router.put('/history/transaction/', passport.authenticate('jwt'), async function
 
 		let sell_flag = true
 		// check if user is able to sell the coin and amount
-		await Crypto.find({ crypto_name: crypto_name })
+		await Crypto.find({ crypto_name: crypto_name, history: history_id })
 			.then(data => {
 				// if there is no crypto data in db or the amount in the crypto is less then req.body.amount
 				if (data.length === 0 || data[0].amount === 0 || data[0].amount < amount) {
