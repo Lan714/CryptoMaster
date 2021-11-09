@@ -52,7 +52,7 @@ const CoinOverview = () => {
 					<Card.Body>
 						<Row className="mb-1">
 							<Col className="text-center">
-								<Text style={{ textTransform: 'uppercase', color: 'white' }} className="me-1">Your Coin Wallet </Text><FontAwesomeIcon icon={faWallet} id="homeIcon" />
+								<Text style={{ textTransform: 'uppercase', color: 'white' }} className="me-1">My Coin Wallet </Text><FontAwesomeIcon icon={faWallet} id="homeIcon" />
 							</Col>
 						</Row>
 
