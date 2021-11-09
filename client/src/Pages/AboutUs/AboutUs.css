@@ -25,8 +25,8 @@ body {
   text-shadow: grey;
   align-items: center;
   text-justify: center;
-	font-size: 56px;
-	text-shadow: 0px 4px 4px #282828;
+  font-size: 56px;
+  text-shadow: 0px 4px 4px #282828;
 }
 
 .aboutUsCont {
@@ -39,4 +39,12 @@ body {
 
 #howToPlay {
   font-size: 40px;
+}
+
+/* small screens */
+
+@media screen and (max-width: 600px) {
+  #aboutUsHeader {
+    font-size: 43px;
+  }
 }

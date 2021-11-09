@@ -46,6 +46,9 @@ body {
   .pgContent {
     width: 100vw;
   }
+  #histTitle {
+    font-size: 43px;
+  }
 }
 
 /* large screens */
