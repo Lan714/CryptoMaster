@@ -1,12 +1,21 @@
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faAngleDoubleRight, faHome, faUsers, faTrophy, faSignOutAlt, faWallet } from '@fortawesome/free-solid-svg-icons'
 import { useHistory } from 'react-router-dom'
+import { useState, useEffect } from 'react'
+import UserAPI from '../../utils/UserAPI/UserAPI'
 import './Navbar.css'
 
 const Navbar = () => {
 
 	const history = useHistory()
+	const [usernameState, setUsernameState] = useState()
 
+	useEffect(() => {
+		UserAPI.getUser()
+			.then(data => {
+				setUsernameState(data.data.name)
+			})
+	})
 
 	const handleSignOut = () => {
 		localStorage.removeItem('token')
@@ -18,10 +27,15 @@ const Navbar = () => {
 		<div className="sideNavbar">
 
 			<ul className="navLi">
+				<li className="navTog">
+					<section className="navLink">
+						<span className="navSpan">{usernameState}</span>
+					</section>
+				</li>
 
 				<li className="navTog">
 					<section className="navLink">
-						<span className="navSpan">CryptoMaster</span>
+						<span className="navSpan">cryptomaster</span>
 						<FontAwesomeIcon icon={faAngleDoubleRight} style={{ color: "gold" }} id="togIcon" />
 					</section>
 				</li>

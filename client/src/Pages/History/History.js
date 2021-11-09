@@ -2,6 +2,7 @@ import { useState, useEffect } from 'react'
 import HistoryAPI from '../../utils/HistoryAPI'
 import CryptoAPI from '../../utils/CryptoAPI'
 import Navbar from '../../components/NavBar'
+import Text from 'react-bootstrap/FormText'
 import { Dropdown, Container, Row, Col } from 'react-bootstrap'
 import DropdownWeeknumForm from '../../components/DropdownWeekNumForm'
 import CoinOverview from '../../components/CoinOverview/CoinOverview'
@@ -90,7 +91,7 @@ const History = () => {
 			return (
 				<tr key={index}>
 					<td>{transaction.date}</td>
-					<td>{transaction.crypto_name}</td>
+					<td><Text style={{ textTransform: 'uppercase', color: 'white' }}>{transaction.crypto_name}</Text></td>
 					<td style={{ background: 'green' }}>{transaction.side}</td>
 					<td>{transaction.price}</td>
 					<td>{transaction.amount}</td>
@@ -102,7 +103,7 @@ const History = () => {
 			return (
 				<tr key={index}>
 					<td>{transaction.date}</td>
-					<td>{transaction.crypto_name}</td>
+					<td><Text style={{ textTransform: 'uppercase', color: 'white' }}>{transaction.crypto_name}</Text></td>
 					<td style={{ background: 'red' }}>{transaction.side}</td>
 					<td>{transaction.price}</td>
 					<td>{transaction.amount}</td>

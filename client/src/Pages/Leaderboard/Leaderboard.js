@@ -8,6 +8,9 @@ import { faTrophy } from '@fortawesome/free-solid-svg-icons'
 import * as ReactBootStrap from 'react-bootstrap'
 import './Leaderboard.css'
 import Footer from '../../components/Footer'
+import Text from 'react-bootstrap/FormText'
+import Ingame_weekNumber from '../../components/Ingame_weekNumber/Ingame_weekNumber'
+
 
 const Leaderboard = () => {
 	if (!localStorage.getItem('token')) {
@@ -42,7 +45,7 @@ const Leaderboard = () => {
 			return (
 				<tr key={index}>
 					<td><FontAwesomeIcon icon={faTrophy} id="topRankIcon" /></td>
-					<td>{rank.username}</td>
+					<td><Text style={{ textTransform: 'uppercase', color: 'white' }}>{rank.username}</Text></td>
 					<td>{rank.profit}</td>
 				</tr>
 			)
@@ -51,7 +54,7 @@ const Leaderboard = () => {
 			return (
 				<tr key={index}>
 					<td>{rank.rank}</td>
-					<td>{rank.username}</td>
+					<td><Text style={{ textTransform: 'uppercase', color: 'white' }}>{rank.username}</Text></td>
 					<td>{rank.profit}</td>
 				</tr>
 			)
@@ -68,6 +71,8 @@ const Leaderboard = () => {
 				console.log(err)
 				window.location = '/'
 			})
+
+			getRankings(Ingame_weekNumber().ingame_weeknumber)
 	}, [])
 
 	return (
