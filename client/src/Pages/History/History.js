@@ -166,24 +166,26 @@ const History = () => {
 							</Row>
 							<br />
 							<Row>
-								{Ingame_weekNumber().ingame_weeknumber === weekNumState ? (<CoinOverview/>) : (<br />)}
-								<ReactBootStrap.Table bordered hover variant="dark" className="text-center text-wrap mt-4" responsive="sm">
-									<thead>
-										<tr>
-											<th>Date Time</th>
-											<th>Coin Name</th>
-											<th>Side</th>
-											<th>Price</th>
-											<th>Amount</th>
-											<th>Total</th>
-										</tr>
-									</thead>
-									<tbody>
-										{
-											transcationState.map(renderTransaction)
-										}
-									</tbody>
-								</ReactBootStrap.Table>
+								{Ingame_weekNumber().ingame_weeknumber === weekNumState ? (<CoinOverview />) : (<br />)}
+								<div className="tableScroll">
+									<ReactBootStrap.Table bordered hover variant="dark" className="text-center text-wrap mt-4" responsive="sm">
+										<thead>
+											<tr>
+												<th>Date Time</th>
+												<th>Coin Name</th>
+												<th>Side</th>
+												<th>Price</th>
+												<th>Amount</th>
+												<th>Total</th>
+											</tr>
+										</thead>
+										<tbody>
+											{
+												transcationState.map(renderTransaction)
+											}
+										</tbody>
+									</ReactBootStrap.Table>
+								</div>
 							</Row>
 						</div>
 					)

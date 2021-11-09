@@ -72,7 +72,7 @@ const Leaderboard = () => {
 				window.location = '/'
 			})
 
-			getRankings(Ingame_weekNumber().ingame_weeknumber)
+		getRankings(Ingame_weekNumber().ingame_weeknumber)
 	}, [])
 
 	return (
@@ -115,20 +115,22 @@ const Leaderboard = () => {
 								</Row>
 								<br />
 								<Row>
-									<ReactBootStrap.Table striped bordered hover variant="dark" className="text-center">
-										<thead>
-											<tr>
-												<th>Rank</th>
-												<th>Username</th>
-												<th>Profit</th>
-											</tr>
-										</thead>
-										<tbody>
-											{
-												rankingState.ranks.map(renderRank)
-											}
-										</tbody>
-									</ReactBootStrap.Table>
+									<div className="tableScroll">
+										<ReactBootStrap.Table striped bordered hover variant="dark" className="text-center">
+											<thead>
+												<tr>
+													<th>Rank</th>
+													<th>Username</th>
+													<th>Profit</th>
+												</tr>
+											</thead>
+											<tbody>
+												{
+													rankingState.ranks.map(renderRank)
+												}
+											</tbody>
+										</ReactBootStrap.Table>
+									</div>
 								</Row>
 							</div>
 						)
