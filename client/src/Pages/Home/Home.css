@@ -41,6 +41,10 @@ body {
     width: 100vw;
     overflow-y: scroll;
   }
+
+  #homeTitle {
+    font-size: 43px;
+  }
 }
 
 /* large screens */

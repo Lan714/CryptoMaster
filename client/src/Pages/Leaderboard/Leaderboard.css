@@ -59,6 +59,10 @@ body {
   .pgContent {
     width: 100vw;
   }
+
+  #lbTitle {
+    font-size: 43px;
+  }
 }
 
 /* large screens */

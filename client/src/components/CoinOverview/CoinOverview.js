@@ -1,7 +1,7 @@
 import { useState, useEffect } from 'react'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faWallet } from '@fortawesome/free-solid-svg-icons'
-import Container from 'react-bootstrap/Container'
+import { Row, Col } from 'react-bootstrap'
 import Text from 'react-bootstrap/FormText'
 import * as ReactBootStrap from 'react-bootstrap'
 import Card from 'react-bootstrap/Card'
@@ -50,7 +50,12 @@ const CoinOverview = () => {
 				:
 				(
 					<Card.Body>
-						<Text style={{ textTransform: 'uppercase', color: 'white', textAlign: 'center' }}>In Your Coin Wallet </Text><FontAwesomeIcon icon={faWallet} id="homeIcon" />
+						<Row className="mb-1">
+							<Col className="text-center">
+								<Text style={{ textTransform: 'uppercase', color: 'white' }} className="me-1">My Coin Wallet </Text><FontAwesomeIcon icon={faWallet} id="homeIcon" />
+							</Col>
+						</Row>
+
 						<ReactBootStrap.Table striped bordered hover variant="dark" className="text-center">
 
 							<thead>

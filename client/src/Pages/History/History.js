@@ -149,7 +149,7 @@ const History = () => {
 							</Row>
 							<br />
 							<Row>
-								<ReactBootStrap.Table striped bordered hover variant="dark" className="text-center">
+								<ReactBootStrap.Table striped bordered hover variant="dark" className="text-center text-wrap" responsive="sm">
 									<thead>
 										<tr>
 											<th>Cash Balance</th>
@@ -166,8 +166,8 @@ const History = () => {
 							</Row>
 							<br />
 							<Row>
-								{Ingame_weekNumber().ingame_weeknumber === weekNumState ? (<CoinOverview />) : (<br />)}
-								<ReactBootStrap.Table bordered hover variant="dark" className="text-center">
+								{Ingame_weekNumber().ingame_weeknumber === weekNumState ? (<CoinOverview/>) : (<br />)}
+								<ReactBootStrap.Table bordered hover variant="dark" className="text-center text-wrap mt-4" responsive="sm">
 									<thead>
 										<tr>
 											<th>Date Time</th>

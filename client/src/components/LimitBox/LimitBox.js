@@ -150,10 +150,10 @@ const LimitBox = () => {
 			<CoinOverview />
 			<ChoiceDisplay />
 			<CardGroup>
-				<Card style={{ width: '18rem' }} className="bg-dark border rounded text-white">
+				<Card style={{ width: '20rem' }} className="bg-dark border rounded text-white m-0">
 					<Card.Body>
 						<Form.Group className="mb-3" controlId="buy_amout">
-							<Form.Label column sm="3">
+							<Form.Label column sm="3" id="amountSpace">
 								Amount
 							</Form.Label>
 							<Form.Control
@@ -164,7 +164,7 @@ const LimitBox = () => {
 								onChange={handleInputChange} />
 						</Form.Group>
 						<Form.Group className="mb-3" controlId="total">
-							<Form.Label column sm="3">
+							<Form.Label column sm="3" id="totalSpace">
 								Total
 							</Form.Label>
 							<Form.Control
@@ -173,7 +173,7 @@ const LimitBox = () => {
 								name="total"
 								value={priceState.buy_amout * real_time_price} />
 						</Form.Group>
-						<ButtonGroup>
+						<ButtonGroup id="btnPosition">
 							<Button
 								variant="warning"
 								onClick={max_buy}>
@@ -189,10 +189,10 @@ const LimitBox = () => {
 						</ButtonGroup>
 					</Card.Body>
 				</Card>
-				<Card style={{ width: '18rem' }} className="bg-dark border rounded text-white">
+				<Card style={{ width: '20rem' }} className="bg-dark border rounded text-white">
 					<Card.Body>
 						<Form.Group className="mb-3" controlId="sell_amount">
-							<Form.Label column sm="3">
+							<Form.Label column sm="3" id="amountSpace">
 								Amount
 							</Form.Label>
 							<Form.Control
@@ -203,7 +203,7 @@ const LimitBox = () => {
 								onChange={handleInputChange} />
 						</Form.Group>
 						<Form.Group className="mb-3" controlId="total">
-							<Form.Label column sm="3">
+							<Form.Label column sm="3" id="totalSpace">
 								Total
 							</Form.Label>
 							<Form.Control
@@ -212,7 +212,7 @@ const LimitBox = () => {
 								name="total"
 								value={priceState.sell_amount * real_time_price} />
 						</Form.Group>
-						<ButtonGroup>
+						<ButtonGroup id="btnPosition">
 							<Button
 								variant="warning"
 								onClick={max_sell}>
