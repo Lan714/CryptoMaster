@@ -37,8 +37,6 @@ const History = () => {
 
 
 	const getCoinOverview = (history_id) => {
-		console.log(`getCoinOverview function with ${history_id}`)
-
 		CryptoAPI.getCoinlist(history_id)
 			.then((data) => {
 				console.log(data.data)
@@ -168,7 +166,7 @@ const History = () => {
 							</Row>
 							<br />
 							<Row>
-								<CoinOverview />
+								{Ingame_weekNumber().ingame_weeknumber === weekNumState ? (<CoinOverview />) : (<br />)}
 								<ReactBootStrap.Table bordered hover variant="dark" className="text-center">
 									<thead>
 										<tr>

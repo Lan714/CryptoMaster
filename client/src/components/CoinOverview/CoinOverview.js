@@ -34,7 +34,6 @@ const CoinOverview = () => {
 			.then(data => {
 				HistoryAPI.getCryptoAmount(data.data[0]._id)
 					.then(data => {
-						console.log(data.data)
 						setCoinsState(data.data)
 						coinsState.map(check_loading)
 					})
