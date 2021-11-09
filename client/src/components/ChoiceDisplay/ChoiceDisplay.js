@@ -16,7 +16,7 @@ const ChoiceDisplay = () => {
 	})
 
 	return (
-		<Card className="bg-dark border rounded text-white">
+		<Card className="bg-dark border rounded text-white mt-5">
 			<Card.Body>
 				Current choice 	: <Text style={{ textTransform: 'uppercase', color: 'yellow' }}>{choice.name}</Text> for ${choice.price}
 			</Card.Body>
