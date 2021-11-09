@@ -13,7 +13,7 @@ const Navbar = () => {
 	useEffect(() => {
 		UserAPI.getUser()
 			.then(data => {
-				setUsernameState(data.data.name)
+				setUsernameState(data.data.username)
 			})
 	})
 
@@ -27,12 +27,6 @@ const Navbar = () => {
 		<div className="sideNavbar">
 
 			<ul className="navLi">
-				<li className="navTog">
-					<section className="navLink">
-						<span className="navSpan">{usernameState}</span>
-					</section>
-				</li>
-
 				<li className="navTog">
 					<section className="navLink">
 						<span className="navSpan">cryptomaster</span>
@@ -66,6 +60,12 @@ const Navbar = () => {
 						<FontAwesomeIcon icon={faUsers} id="navIcon" />
 						<span className="navSpan">About Us</span>
 					</div>
+				</li>
+
+				<li className="navTab">
+					<section className="navLink">
+						<span className="navSpan">{usernameState}</span>
+					</section>
 				</li>
 
 				<li className="navTab">
