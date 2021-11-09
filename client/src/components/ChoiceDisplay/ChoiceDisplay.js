@@ -1,5 +1,6 @@
 import { useState, useEffect } from 'react'
 import Container from 'react-bootstrap/Container'
+import Text from 'react-bootstrap/FormText'
 import Card from 'react-bootstrap/Card'
 
 const ChoiceDisplay = () => {
@@ -17,7 +18,7 @@ const ChoiceDisplay = () => {
 	return (
 		<Card className="bg-dark border rounded text-white">
 			<Card.Body>
-				Current choice 	: {choice.name} for ${choice.price}
+				Current choice 	: <Text style={{ textTransform: 'uppercase', color: 'yellow' }}>{choice.name}</Text> for ${choice.price}
 			</Card.Body>
 		</Card>
 	)

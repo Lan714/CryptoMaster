@@ -2,6 +2,7 @@ import { useState, useEffect } from 'react'
 import HistoryAPI from '../../utils/HistoryAPI/HistoryAPI'
 import { Container, Card, CardGroup, Form, Button } from 'react-bootstrap'
 import './LimitBox.css'
+import CoinOverview from '../CoinOverview/CoinOverview'
 import ChoiceDisplay from '../ChoiceDisplay'
 import Ingame_weekNumber from '../Ingame_weekNumber/Ingame_weekNumber'
 import { ButtonGroup } from 'react-bootstrap'
@@ -98,6 +99,7 @@ const LimitBox = () => {
 				}
 			})
 	}
+	
 	const half_buy = event => {
 		HistoryAPI.getHistory(Ingame_weekNumber().ingame_weeknumber)
 			.then((data) => {
@@ -145,6 +147,7 @@ const LimitBox = () => {
 
 	return (
 		<Container id="limitBoxCont" className="mt-5">
+			<CoinOverview />
 			<ChoiceDisplay />
 			<CardGroup>
 				<Card style={{ width: '18rem' }} className="bg-dark border rounded text-white">
