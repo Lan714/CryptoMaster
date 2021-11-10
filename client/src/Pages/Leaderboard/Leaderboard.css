@@ -53,10 +53,10 @@ body {
   border-radius: 20px !important;
 }
 
-.tableScroll {
+/* .tableScroll {
   height: 200px;
   overflow: scroll;
-}
+} */
 
 /* .tableScroll thead th {
   position: sticky;
