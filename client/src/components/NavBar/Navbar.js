@@ -62,10 +62,10 @@ const Navbar = () => {
 					</div>
 				</li>
 
-				<li className="navTab">
-					<section className="navLink">
+				<li className="navTab" id="userTab">
+					<div className="navLink">
 						<span className="navSpan">{usernameState}</span>
-					</section>
+					</div>
 				</li>
 
 				<li className="navTab">

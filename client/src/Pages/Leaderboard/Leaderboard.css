@@ -54,9 +54,15 @@ body {
 }
 
 .tableScroll {
-  height: 100px;
+  height: 200px;
   overflow: scroll;
 }
+
+/* .tableScroll thead th {
+  position: sticky;
+  top: 0;
+  z-index: 2;
+} */
 
 /* small screens */
 
@@ -64,7 +70,6 @@ body {
   .pgContent {
     width: 100vw;
   }
-
   #lbTitle {
     font-size: 43px;
   }

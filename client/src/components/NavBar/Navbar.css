@@ -86,6 +86,9 @@
   .navTog {
     display: none !important;
   }
+  #userTab {
+    display: none;
+  }
   .navLi {
     flex-direction: row;
     justify-content: space-evenly;
@@ -107,7 +110,7 @@
   .sideNavbar:hover .navSpan {
     display: block;
   }
-  .navTab:last-child {
+  .navTab:nth-last-child(2) {
     margin-top: auto;
   }
   .sideNavbar:hover~.pgContent {
