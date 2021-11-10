@@ -167,7 +167,7 @@ const History = () => {
 							<br />
 							<Row>
 								{Ingame_weekNumber().ingame_weeknumber === weekNumState ? (<CoinOverview />) : (<br />)}
-								<div className="tableScroll">
+								<div>
 									<ReactBootStrap.Table bordered hover variant="dark" className="text-center text-wrap mt-4" responsive="sm">
 										<thead>
 											<tr>
