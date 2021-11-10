@@ -3,6 +3,7 @@ import { faAngleDoubleRight, faHome, faUsers, faTrophy, faSignOutAlt, faWallet }
 import { useHistory } from 'react-router-dom'
 import { useState, useEffect } from 'react'
 import UserAPI from '../../utils/UserAPI/UserAPI'
+import Avatar from 'react-avatar'
 import './Navbar.css'
 
 const Navbar = () => {
@@ -64,6 +65,7 @@ const Navbar = () => {
 
 				<li className="navTab" id="userTab">
 					<div className="navLink">
+						<Avatar name={usernameState} size='45' round={true} />
 						<span className="navSpan">{usernameState}</span>
 					</div>
 				</li>
